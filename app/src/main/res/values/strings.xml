@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calcapp</string>
+    <string name="_1">数字を入力(1)</string>
+    <string name="_2">数字を入力(2)</string>
+    <string name="たす">たす</string>
+    <string name="ひく">ひく</string>
+    <string name="かける">かける</string>
+    <string name="わる">わる</string>
+    <string name="結果">結果</string>
+</resources>
