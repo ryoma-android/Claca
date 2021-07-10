@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.snackbar.Snackbar.LENGTH_INDEFINITE
+import com.google.android.material.snackbar.Snackbar.make
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -26,8 +27,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         if (et1.text.isEmpty() || et2.text.isEmpty()) {
-            Snackbar.make(v , "何か数値を入れてください", Snackbar.LENGTH_INDEFINITE)
-                .show()
+            make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
+                .setAction("Action") {
+                }.show()
 
 
         } else {
@@ -42,14 +44,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         if (et1.text.isEmpty() || et2.text.isEmpty()) {
-            Snackbar.make(v, "何か数値を入れてください", Snackbar.LENGTH_INDEFINITE)
-                .show()
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra(
-                "VALUE1",
-                et1.text.toString().toDouble() - et2.text.toString().toDouble()
-            )
-            startActivity(intent)
+            make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
+                .setAction("Action") {
+                }.show()
+
+
         } else {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
@@ -61,8 +60,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         if (et1.text.isEmpty() || et2.text.isEmpty()) {
-            Snackbar.make(v, "何か数値を入れてください", Snackbar.LENGTH_INDEFINITE)
-                .show()
+            make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
+                .setAction("Action") {
+                }.show()
 
 
         } else {
@@ -76,8 +76,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         if (et1.text.isEmpty() || et2.text.isEmpty()) {
-            Snackbar.make(v, "何か数値を入れてください", Snackbar.LENGTH_INDEFINITE)
-                .show()
+            make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
+                .setAction("Action") {
+                }.show()
+
         } else {
 
             val intent = Intent(this, MainActivity2::class.java)
