@@ -33,13 +33,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         } else {
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra(
-                "VALUE1",
-                et1.text.toString().toDouble() + et2.text.toString().toDouble()
-            )
-            startActivity(intent)
+            btn1.setOnClickListener {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra(
+                    "VALUE1",
+                    et1.text.toString().toDouble() + et2.text.toString().toDouble()
+                )
+                startActivity(intent)
 
+            }
         }
 
 
@@ -50,13 +52,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         } else {
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra(
-                "VALUE1",
-                et1.text.toString().toDouble() - et2.text.toString().toDouble()
-            )
-            startActivity(intent)
+            btn2.setOnClickListener {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra(
+                    "VALUE1",
+                    et1.text.toString().toDouble() - et2.text.toString().toDouble()
+                )
+                startActivity(intent)
 
+            }
         }
 
         if (et1.text.isEmpty() || et2.text.isEmpty()) {
@@ -66,34 +70,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         } else {
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra(
-                "VALUE1",
-                et1.text.toString().toDouble() * et2.text.toString().toDouble()
-            )
-            startActivity(intent)
+            btn3.setOnClickListener {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra(
+                    "VALUE1",
+                    et1.text.toString().toDouble() * et2.text.toString().toDouble()
+                )
+                startActivity(intent)
 
+            }
+
+            if (et1.text.isEmpty() || et2.text.isEmpty()) {
+                make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
+                    .setAction("Action") {
+                    }.show()
+
+            } else {
+
+                val intent = Intent(this, MainActivity2::class.java)
+                btn4.setOnClickListener {
+                    intent.putExtra(
+                        "VALUE1",
+                        et1.text.toString().toDouble() / et2.text.toString().toDouble()
+                    )
+                    startActivity(intent)
+
+                }
+            }
         }
 
-        if (et1.text.isEmpty() || et2.text.isEmpty()) {
-            make(v, "何か数値を入れてください", LENGTH_INDEFINITE)
-                .setAction("Action") {
-                }.show()
-
-        } else {
-
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra(
-                "VALUE1",
-                et1.text.toString().toDouble() / et2.text.toString().toDouble()
-            )
-            startActivity(intent)
-
-        }
     }
 }
-
-
-
 
 

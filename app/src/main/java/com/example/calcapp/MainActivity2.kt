@@ -12,8 +12,8 @@ class MainActivity2 : AppCompatActivity() {
 
         val value1 = intent.getDoubleExtra("VALUE1", 0.0)
 
+
         tvAns.text = "$value1"
-
-
     }
 }
+
